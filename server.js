@@ -9,7 +9,7 @@ const port  = process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine','hbs');
-app.use(express.static(__dirname + '/public'));
+
 
 
 hbs.registerHelper('getCurrentYear',()=>{
@@ -21,9 +21,10 @@ hbs.registerHelper('screamIt',(text)=>{
 })
 
 
-app.use((req,res,next)=>{
-     res.render('maintanance.hbs')
-})
+// app.use((req,res,next)=>{
+//      res.render('maintanance.hbs')
+// })
+app.use(express.static(__dirname + '/public'));
 
 app.use((req,res,next)=>{
     var now = new Date().toDateString();
