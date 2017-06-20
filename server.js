@@ -21,9 +21,9 @@ hbs.registerHelper('screamIt',(text)=>{
 })
 
 
-// app.use((req,res,next)=>{
-//      res.render('maintanance.hbs')
-// })
+app.use((req,res,next)=>{
+     res.render('maintanance.hbs')
+})
 app.use(express.static(__dirname + '/public'));
 
 app.use((req,res,next)=>{
